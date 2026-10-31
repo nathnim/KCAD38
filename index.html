@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Áo đường mềm TCCS 38</title>
+<style>
+:root{--ink:#132b39;--ink2:#2b4554;--muted:#6c7e86;--teal:#0a7f77;--teal2:#e0f2ee;--paper:#f4f6f5;--card:#fff;--line:#dbe4e1;--red:#b5402f;--redbg:#fdeeea;--green:#1a7a55;--greenbg:#e6f5ed;--amber:#9b6512;--amberbg:#fff3dc;--soft:#f7faf9;--field:#fff;--head:#f1f6f4}
+:root[data-theme="dark"]{--ink:#e3ecef;--ink2:#c3d2d7;--muted:#91a3aa;--teal:#3cc2b3;--teal2:#16393a;--paper:#0f1a1f;--card:#16242b;--line:#2a3d45;--red:#f08b77;--redbg:#3a201b;--green:#6fd3a5;--greenbg:#143327;--amber:#f0c06a;--amberbg:#3a2e16;--soft:#1a2b32;--field:#101d23;--head:#1b2d34}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e3ecef;--ink2:#c3d2d7;--muted:#91a3aa;--teal:#3cc2b3;--teal2:#16393a;--paper:#0f1a1f;--card:#16242b;--line:#2a3d45;--red:#f08b77;--redbg:#3a201b;--green:#6fd3a5;--greenbg:#143327;--amber:#f0c06a;--amberbg:#3a2e16;--soft:#1a2b32;--field:#101d23;--head:#1b2d34}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 "Segoe UI",Inter,system-ui,-apple-system,sans-serif}
+button,input,select{font:inherit;color:inherit}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.top-in{max-width:1380px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:750;letter-spacing:-.01em;display:flex;gap:10px;align-items:center}
+.brand .mk{width:34px;height:34px;border-radius:10px;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.brand small{display:block;font-weight:600;color:var(--muted);font-size:11px}
+.tabs{display:flex;gap:4px;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:3px;margin-left:auto;flex-wrap:wrap}
+.tab{border:0;background:transparent;padding:7px 12px;border-radius:8px;font-size:12.5px;font-weight:650;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--card);color:var(--teal);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card);padding:7px 11px;border-radius:8px;font-size:12.5px;font-weight:650;cursor:pointer}
+.btn:hover{border-color:var(--teal)}
+.btn.pri{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn.sm{padding:4px 8px;font-size:11.5px}
+main{max-width:1380px;margin:0 auto;padding:18px 20px 60px}
+.status{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.pill{border-radius:99px;padding:5px 11px;font-size:12px;font-weight:700;border:1px solid var(--line);background:var(--card)}
+.pill.ok{background:var(--greenbg);color:var(--green);border-color:transparent}
+.pill.ng{background:var(--redbg);color:var(--red);border-color:transparent}
+.pill.na{color:var(--muted)}
+.page{display:none}.page.on{display:block}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.card h2{font-size:15.5px;margin:0 0 4px;letter-spacing:-.01em}
+.card .sub{color:var(--muted);font-size:12px;margin:0 0 12px}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px 12px}
+.f label{display:block;font-size:11.5px;color:var(--muted);font-weight:650;margin-bottom:4px}
+.f .c,.c{width:100%;height:34px;border:1px solid var(--line);border-radius:7px;background:var(--field);padding:0 8px;font-size:13px}
+.c:focus{outline:2px solid color-mix(in srgb,var(--teal) 35%,transparent);border-color:var(--teal)}
+.c[readonly]{background:var(--soft);color:var(--muted)}
+.f .hint{font-size:11px;color:var(--muted);margin-top:3px}
+.ro{height:34px;border:1px dashed var(--line);border-radius:7px;display:flex;align-items:center;justify-content:space-between;padding:0 9px;background:var(--soft);font-size:12px}
+.ro b{font-variant-numeric:tabular-nums}
+table{border-collapse:collapse;width:100%}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:9px}
+.tbl{font-size:12.5px;min-width:720px}
+.tbl th{background:var(--head);text-align:left;font-size:11px;color:var(--muted);font-weight:700;padding:7px 6px;white-space:nowrap;border-bottom:1px solid var(--line)}
+.tbl td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:middle;font-variant-numeric:tabular-nums}
+.tbl td.n{text-align:right}
+.tbl .c{height:30px;font-size:12.5px;padding:0 5px;min-width:56px}
+.tbl tr.off td{opacity:.55}
+.tbl tfoot td{font-weight:700;background:var(--head)}
+.xbtn{border:0;background:transparent;cursor:pointer;color:var(--muted);font-weight:800;padding:2px 5px;border-radius:5px}
+.xbtn:hover{background:var(--teal2);color:var(--teal)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--ink2);margin-top:10px}
+.warn{background:var(--amberbg);color:var(--amber);border-radius:8px;padding:8px 11px;font-size:12px;margin-top:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kpi span{display:block;font-size:11px;color:var(--muted)}.kpi b{font-size:18px;font-variant-numeric:tabular-nums}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin-bottom:16px}
+.chk{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:10px 12px}
+.chk.ok{border-left-color:var(--green)}.chk.ng{border-left-color:var(--red)}
+.chk .h{display:flex;justify-content:space-between;gap:8px;font-weight:700;font-size:13px}
+.chk .v{font-size:12.5px;color:var(--ink2);margin-top:4px;font-variant-numeric:tabular-nums}
+.badge{font-size:11px;font-weight:800;border-radius:99px;padding:2px 8px;white-space:nowrap}
+.badge.ok{background:var(--greenbg);color:var(--green)}.badge.ng{background:var(--redbg);color:var(--red)}.badge.na{background:var(--soft);color:var(--muted)}
+.step{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.step h3{font-size:14px;margin:0 0 6px}
+.step p{margin:4px 0;font-size:12.8px}
+.eq{font-family:Consolas,ui-monospace,monospace;font-size:12.5px;background:var(--soft);border-radius:6px;padding:6px 9px;margin:5px 0;overflow-x:auto;white-space:pre-wrap}
+.ovr{display:inline-flex;gap:6px;align-items:center;font-size:11.5px;color:var(--muted);margin-top:4px}
+.ovr input{width:90px;height:26px;border:1px solid var(--line);border-radius:6px;background:var(--field);padding:0 6px;font-size:12px}
+.stack{display:flex;flex-direction:column;gap:3px;max-width:420px}
+.sl{display:flex;justify-content:space-between;padding:4px 9px;border-radius:5px;font-size:11.5px;color:#213a42}
+.sl.asphalt{background:#cfd6da}.sl.cement{background:#dfe2ee}.sl.granular{background:#dcebe6}.sl.soil{background:#e6dccb}.sl.surface{background:#efe3c8}
+.imgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.imgs .nomo{max-width:none;margin:0}.imgs figure{margin:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}
+.imgs img{width:100%;display:block}
+.imgs figcaption{font-size:11.5px;padding:6px 9px;color:#46585e;background:#f6f8f7}
+.small{font-size:11.5px;color:var(--muted)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.busy{opacity:.6}
+@media(max-width:900px){.grid2,.imgs{grid-template-columns:1fr}.tabs{margin-left:0}}
+.nomo{margin:8px 0 4px;max-width:640px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}
+.nomo .ni{position:relative;line-height:0}
+.nomo img{width:100%;display:block}
+.nomo svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.nomo svg .tl{stroke:#d62f22;stroke-width:3.2;stroke-dasharray:11 7;fill:none}
+.nomo svg .ar{fill:#d62f22}
+.nomo svg .pt{fill:#ffd65a;stroke:#c1271b;stroke-width:3}
+.nomo svg .lb{font:700 21px "Segoe UI",Arial,sans-serif;fill:#b0211a;paint-order:stroke;stroke:#fff;stroke-width:6px;stroke-linejoin:round}
+.nomo figcaption{font-size:11.8px;line-height:1.5;padding:7px 10px;color:#33474e;background:#f6f8f7;border-top:1px solid #e3e9e7}
+.nomo figcaption ol{margin:2px 0 0;padding-left:18px}
+.struct{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:9px}
+.structwrap{max-width:900px}
+.wm{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden;display:none;opacity:.07}
+body.on-p4 .wm,body.on-p3 .wm{display:block}
+.print-only{display:none}
+.ptbl{width:100%;border-collapse:collapse}.ptbl>thead>tr>td,.ptbl>tbody>tr>td,.ptbl>tfoot>tr>td{padding:0;border:0}
+.pfoot-sp{height:0}.pfoot{display:none}
+.rhead{text-align:center;border-bottom:2px solid var(--teal);padding-bottom:10px;margin-bottom:6px}
+.rhead h1{font-size:22px;letter-spacing:.04em;margin:2px 0 4px;text-transform:uppercase}
+.rhead .std{font-size:12.5px;color:var(--ink2)}.rhead .std a{color:var(--teal);font-weight:650;text-decoration:none}
+.rinfo{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0 2px}
+.rinfo td{padding:4px 8px;border:1px solid var(--line)}.rinfo td.k{color:var(--muted);width:19%;background:var(--soft)}
+.nomo{margin:10px auto 4px}
+.nomo.big{max-width:900px}
+.nrow{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.nrow .nomo{flex:1 1 300px;margin:10px 0 4px}
+.disc{font-size:11.5px;color:var(--ink2);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-top:12px;line-height:1.55}
+.disc b{color:var(--ink)}
+.sitefoot{max-width:1380px;margin:0 auto;padding:16px 20px 30px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center;line-height:1.7}
+.sitefoot b{color:var(--ink2)}
+#login{position:fixed;inset:0;z-index:100;background:linear-gradient(135deg,#0d3b45,#0a7f77);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+body:not(.locked) #login{display:none}
+body.locked header.top,body.locked main,body.locked .sitefoot,body.locked .wm{display:none!important}
+.lbox{background:#fff;color:#132b39;border-radius:14px;max-width:440px;width:100%;padding:26px 26px 20px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.lbox h1{font-size:19px;margin:10px 0 2px;text-align:center}.lbox .s{text-align:center;color:#5d6f76;font-size:12.5px;margin-bottom:16px}
+.lbox label{display:block;font-size:12px;font-weight:650;color:#5d6f76;margin:10px 0 4px}
+.lbox input[type=text],.lbox input[type=password]{width:100%;height:38px;border:1px solid #cfdad7;border-radius:8px;padding:0 10px;font-size:14px;background:#fff;color:#132b39}
+.lbox .err{color:#b5402f;font-size:12.5px;min-height:18px;margin-top:8px}
+.lbox button{width:100%;height:40px;margin-top:6px;border:0;border-radius:8px;background:#0a7f77;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+.lbox .ld{font-size:10.8px;color:#5d6f76;line-height:1.5;margin-top:14px;border-top:1px solid #e3e9e7;padding-top:10px}
+.lbox .mk{width:44px;height:44px;border-radius:12px;background:#0a7f77;color:#fff;display:grid;place-items:center;font-weight:800;margin:0 auto}
+@media print{
+ @page{size:A4;margin:12mm 15mm 8mm 15mm;@bottom-right{content:counter(page) " / " counter(pages);font:8pt "Segoe UI",Arial,sans-serif;color:#666}}
+ header.top,.acts,.noprint,.tabs,.status,#p1,#p2,#p3,#p5,.sitefoot,#login{display:none!important}
+ #p4{display:block!important}
+ html,body{background:#fff!important;color:#000}
+ body{font-size:11px;line-height:1.42}
+ main{padding:0;max-width:none;margin:0}
+ #report.card{border:0;padding:0;margin:0 auto;max-width:180mm;background:transparent}
+ .print-only{display:block}
+ .rhead h1{font-size:19pt}
+ .step{border-top:1px solid #cfd8d5;padding-top:7px;margin-top:8px;break-inside:auto}
+ .step h3{font-size:12.5px;margin:0 0 4px;break-after:avoid}
+ .step p{font-size:11px;margin:3px 0}
+ .eq{font-size:10.5px;padding:5px 8px;margin:4px 0;break-inside:avoid}
+ .tw{border-radius:6px;break-inside:avoid;overflow:visible}
+ .tbl{min-width:0!important;font-size:10.3px}.tbl th{font-size:9.5px;padding:4px 5px}.tbl td{padding:3px 5px}
+ .nomo{max-width:178mm;margin:5px auto 3px;break-inside:avoid;border-radius:6px;display:flex;align-items:stretch}
+ .nomo .ni{width:70mm;flex:none}
+ .nomo figcaption{flex:1;font-size:9.6px;padding:6px 8px;line-height:1.4;border-top:0;border-left:1px solid #e3e9e7;display:flex;flex-direction:column;justify-content:center}
+ .nomo.big{display:block;max-width:150mm}.nomo.big .ni{width:100%}.nomo.big figcaption{border-left:0;border-top:1px solid #e3e9e7;display:block}
+ .nomo.fig7.big{display:flex;max-width:178mm}.nomo.fig7.big .ni{width:72mm}.nomo.fig7.big figcaption{border-top:0;border-left:1px solid #e3e9e7;display:flex}
+ .nomo.fig8 .ni{width:64mm}
+ .nrow{flex-wrap:nowrap;gap:4mm}.nrow .nomo{flex:1 1 0;max-width:none;margin:5px 0 3px;display:block}.nrow .nomo .ni{width:100%}.nrow .nomo figcaption{border-left:0;border-top:1px solid #e3e9e7;display:block}
+ .structwrap{max-width:150mm;margin:2px auto;break-inside:avoid}
+ .rinfo{font-size:10.8px}.rinfo td{padding:3px 6px}
+ .wm{display:block!important;position:fixed;opacity:.09!important}
+ details summary{display:none}
+ .step.pb{break-before:page;border-top:0;margin-top:0;padding-top:0}
+ body.no-nomo-print .nomo{display:none!important}
+ .disc{font-size:9.4px;padding:5px 8px;line-height:1.4}
+ .pfoot-sp{height:15mm}
+ .pfoot{display:block;position:fixed;left:0;right:0;bottom:0;text-align:center;font-size:8.3px;line-height:1.45;color:#3b4d53;border-top:1px solid #9fb3ae;padding-top:4px;background:#fff}
+}
+</style>
+</head>
+<body class="locked">
+<div id="login"><form class="lbox" id="loginForm" autocomplete="off"><div style="text-align:right;margin:-10px -8px 0 0"><button type="button" id="lgLang" style="width:auto;height:28px;padding:0 10px;margin:0;background:#e6f2ef;color:#0a7f77;font-size:12px">English</button></div><div class="mk">KC</div><h1 id="lgTitle">Tính toán kết cấu áo đường mềm</h1><div class="s" id="lgSub">Theo TCCS 38:2022/TCĐBVN · Bộ môn Đường bộ - Sân bay, Trường ĐH Giao thông Vận tải</div><label for="lgUser" id="lgUL">Tài khoản</label><input type="text" id="lgUser" autocomplete="username"><label for="lgPass" id="lgPL">Mật khẩu</label><input type="password" id="lgPass" autocomplete="current-password"><div class="err" id="lgErr"></div><button type="submit" id="lgBtn">Đăng nhập</button><div class="ld" id="lgDisc">Chương trình được xây dựng phục vụ giảng dạy, học tập và tham khảo. Kết quả phụ thuộc hoàn toàn vào số liệu đầu vào do người sử dụng cung cấp và các giả thiết tính toán đã nêu (trị số toán đồ được xác định bằng lời giải hệ đàn hồi nhiều lớp và các công thức gần đúng ở Phụ lục E của tiêu chuẩn). Chương trình không thay thế hồ sơ thiết kế, khảo sát, thí nghiệm vật liệu và trách nhiệm thẩm tra, phê duyệt theo quy định. Tác giả và Bộ môn không chịu trách nhiệm đối với bất kỳ thiệt hại hay hệ quả nào phát sinh khi sử dụng kết quả của chương trình cho mục đích thiết kế, thi công hoặc thương mại. Người sử dụng có trách nhiệm kiểm tra, đối chiếu với TCCS 38:2022/TCĐBVN và các quy định hiện hành trước khi sử dụng.</div></form></div>
+
+<header class="top"><div class="top-in">
+  <div class="brand"><div class="mk">KC</div><div>Kết cấu áo đường mềm<small>Tính tự động theo TCCS 38:2022/TCĐBVN</small></div></div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" data-page="p1" aria-selected="true">1 · Giao thông</button>
+    <button class="tab" data-page="p2" aria-selected="false">2 · Nền &amp; kết cấu</button>
+    <button class="tab" data-page="p3" aria-selected="false">3 · Kết quả kiểm toán</button>
+    <button class="tab" data-page="p4" aria-selected="false">4 · Thuyết minh chi tiết</button>
+    <button class="tab" data-page="p5" aria-selected="false">5 · Phương pháp &amp; toán đồ</button>
+  </nav>
+  <div class="acts">
+    <select class="c" id="exampleSel" style="width:auto;height:32px"><option value="">Nạp ví dụ…</option><option value="D1">Ví dụ D.1 (cấp II, A1)</option><option value="D2">Ví dụ D.2 (cấp IV, A2)</option><option value="T4">Mẫu 4 lớp BTN–CPĐD</option></select>
+    <button class="btn" id="saveBtn">Lưu .json</button>
+    <label class="btn" style="display:inline-flex;align-items:center">Mở .json<input type="file" id="loadFile" accept=".json" hidden></label>
+    <button class="btn" id="langBtn" title="Ngôn ngữ / Language">English</button>
+    <button class="btn" id="themeBtn" title="Đổi giao diện sáng/tối">◐</button>
+    <button class="btn pri" id="printBtn">In / PDF</button>
+  </div>
+</div></header>
+
+<div class="wm" aria-hidden="true"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wmPat" width="980" height="170" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)"><text x="0" y="60" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#0a7f77">TS. Đặng Minh Tân | Bộ môn Đường bộ - Sân bay | Trường Đại học Giao thông Vận tải</text><text x="-490" y="145" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#0a7f77">TS. Đặng Minh Tân | Bộ môn Đường bộ - Sân bay | Trường Đại học Giao thông Vận tải</text><text x="490" y="145" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#0a7f77">TS. Đặng Minh Tân | Bộ môn Đường bộ - Sân bay | Trường Đại học Giao thông Vận tải</text></pattern></defs><rect width="100%" height="100%" fill="url(#wmPat)"/></svg></div>
+<main>
+  <div class="status" id="statusBar"></div>
+
+  <!-- PAGE 1 -->
+  <section class="page on" id="p1">
+    <div class="card">
+      <h2>Thông số thiết kế chung</h2>
+      <p class="sub">Cấp đường, loại tầng mặt, tải trọng trục tính toán (Bảng 6), độ tin cậy (Bảng 7, 8).</p>
+      <div class="fields">
+        <div class="f" style="grid-column:span 2"><label>Tên công trình / phương án</label><input class="c" id="projName"></div>
+        <div class="f" style="grid-column:span 2"><label>Loại và cấp đường</label><select class="c" id="road"></select></div>
+        <div class="f"><label>Loại tầng mặt</label><select class="c" id="surface"><option value="A1">Cấp cao A1</option><option value="A2">Cấp cao A2</option><option value="B1">Cấp thấp B1</option></select></div>
+        <div class="f"><label>Tải trọng trục tính toán</label><select class="c" id="axle"><option value="100">100 kN (p=0,6 MPa; D=33 cm)</option><option value="120">120 kN (p=0,6 MPa; D=36 cm)</option></select></div>
+        <div class="f"><label>Độ tin cậy thiết kế</label><select class="c" id="rel"></select><div class="hint" id="relHint"></div></div>
+        <div class="f"><label>Hệ số an toàn (Bảng 8)</label><div class="ro"><span>K<sub>dv</sub> / K<sub>tr</sub>=K<sub>ku</sub></span><b id="kDisp">—</b></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Lưu lượng trục xe tính toán · điều 7.5–7.9, Phụ lục A</h2>
+      <p class="sub">N = Σ C₁·C₂·nᵢ·(Pᵢ/Pₜₜ)<sup>4,4</sup>; C₁ = 1 + 1,2(m − 1); C₂ = 6,4 (bánh đơn) · 1,0 (bánh đôi) · 0,38 (cụm 4 bánh). Trục &lt; 25 kN không xét. Lượng xe nᵢ hai chiều ở năm cuối thời hạn thiết kế.</p>
+      <div class="fields" style="margin-bottom:10px">
+        <div class="f"><label>Thời hạn tính toán t (năm)</label><input class="c" id="tDesign" type="number" min="1" step="1"><div class="hint">Bảng 2 TCCS 38</div></div>
+        <div class="f"><label>Lưu lượng xe nhập cho</label><select class="c" id="trafYear"><option value="last">Năm cuối thời hạn tính toán</option><option value="first">Năm đầu đưa vào khai thác</option></select></div>
+        <div class="f"><label>Hệ số tăng trưởng xe q (%/năm)</label><input class="c" id="qGrowth" type="number" min="0" step="any"></div>
+        <div class="f"><label>Cách nhập</label><select class="c" id="trafMode"><option value="table">Bảng thành phần xe</option><option value="direct">Nhập trực tiếp Nₜₖ</option></select></div>
+        <div class="f" id="NtkDirectWrap"><label>Nₜₖ (trục/ngđ, 2 chiều)</label><input class="c" id="NtkDirect" type="number" min="0" step="any"></div>
+        <div class="f"><label>Hệ số làn f<sub>l</sub> (điều 7.9)</label><select class="c" id="flSel"><option value="1">1,00 · đường 1 làn</option><option value="0.55">0,55 · 2–3 làn, không dải phân cách</option><option value="0.35">0,35 · 4 làn, có dải phân cách</option><option value="0.3">0,30 · ≥ 6 làn, có dải phân cách</option><option value="custom">Tự nhập</option></select></div>
+        <div class="f" id="flCustomWrap"><label>f<sub>l</sub> tự nhập</label><input class="c" id="flCustom" type="number" min="0.05" max="1" step="any"></div>
+        <div class="f"><label>Nₑ tự nhập (để trống = tự tính)</label><input class="c" id="NeManual" type="number" min="0" step="any" placeholder="tự tính theo (A.3)"></div>
+      </div>
+      <div id="vehWrap">
+        <div class="tw"><table class="tbl" id="vehTbl">
+          <thead><tr><th>Loại xe</th><th>P trục trước (kN)</th><th>P trục sau (kN/trục)</th><th>Số trục sau m</th><th>Bánh trục sau</th><th>Trục sau cách nhau</th><th>nᵢ (xe/ngđ 2 chiều)</th><th>N quy đổi</th><th></th></tr></thead>
+          <tbody></tbody>
+          <tfoot><tr><td colspan="7">Tổng Nₜₖ (trục 100 kN/ngđ, 2 chiều)</td><td class="n" id="NtkFoot">—</td><td></td></tr></tfoot>
+        </table></div>
+        <div class="row" style="margin-top:8px"><button class="btn sm" id="addVeh">＋ Thêm loại xe</button><span class="small">Xe con (P &lt; 25 kN) có thể bỏ qua hoặc nhập — app tự loại trục nhẹ.</span></div>
+      </div>
+      <div class="kpis" style="margin-top:14px">
+        <div class="kpi"><span>Nₜₖ năm đầu / năm cuối (2 chiều)</span><b id="kNtk" style="font-size:15px">—</b></div>
+        <div class="kpi"><span>Nₜₜ = Nₜₖ·f<sub>l</sub> (trục/làn·ngđ)</span><b id="kNtt">—</b></div>
+        <div class="kpi"><span>Nₑ tích lũy (trục/làn)</span><b id="kNe">—</b></div>
+        <div class="kpi"><span>Quy mô (Bảng 1)</span><b id="kScale" style="font-size:14px">—</b></div>
+      </div>
+      <div id="trafDetail"></div>
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="page" id="p2">
+    <div class="card">
+      <h2>Nền đất trong khu vực tác dụng · Phụ lục B</h2>
+      <p class="sub">Chọn loại đất và độ ẩm tương đối a = W/W<sub>nh</sub> để tự tra E₀, φ, c (Bảng B.4, nội suy). Có thể nhập CBR để kiểm tra E₀ = 7,93·CBR<sup>0,85</sup>; mọi ô đều sửa được.</p>
+      <div class="fields">
+        <div class="f" style="grid-column:span 2"><label>Loại đất nền</label><select class="c" id="soilType"></select></div>
+        <div class="f"><label>Độ ẩm tương đối a</label><input class="c" id="soilA" type="number" min="0.55" max="0.9" step="0.01"></div>
+        <div class="f"><label>CBR (%) · tùy chọn</label><input class="c" id="soilCBR" type="number" min="0" step="any" placeholder="—"></div>
+        <div class="f"><label>E₀ (MPa)</label><input class="c" id="E0" type="number" min="1" step="any"><div class="hint" id="E0hint"></div></div>
+        <div class="f"><label>φ (độ)</label><input class="c" id="soilPhi" type="number" min="0" max="50" step="any"></div>
+        <div class="f"><label>c (MPa)</label><input class="c" id="soilC" type="number" min="0" step="any"></div>
+        <div class="f"><label>K₃ (điều 9.3.4)</label><input class="c" id="soilK3" type="number" min="0.1" step="any"></div>
+      </div>
+      <div class="row" style="margin-top:8px"><button class="btn sm" id="soilAuto">↺ Tra lại theo Bảng B.4</button><span class="small" id="soilNote"></span></div>
+    </div>
+
+    <div class="card">
+      <h2>Cấu tạo kết cấu áo đường (từ trên xuống)</h2>
+      <p class="sub">Chọn vật liệu để tự điền đặc trưng tính toán theo Phụ lục C. E<sub>dv</sub>: mô đun tính độ võng (BTN ở 30 °C); E<sub>tr</sub>: tính trượt; E<sub>ku</sub>: tính kéo uốn (BTN ở 10–15 °C, để trống = tự chọn theo ghi chú 1 Bảng C.1). Bỏ chọn “Tính” với lớp không chịu lực (láng nhựa…).</p>
+      <div class="fields" style="margin-bottom:10px">
+        <div class="f"><label>E<sub>tr</sub> của BTN khi kiểm tra trượt</label><select class="c" id="trTemp"><option value="30">30 °C · theo điều 9.1.5.2</option><option value="60">60 °C · như ví dụ Phụ lục D</option></select></div>
+        <div class="f"><label>Hệ số k<sub>b</sub> (điều 9.4.2)</label><input class="c" id="kb" type="number" min="0.5" max="1" step="any"></div>
+        <div class="f"><label>K₁ cắt trượt (điều 9.3.4)</label><input class="c" id="K1s" type="number" min="0.1" max="1" step="any"></div>
+        <div class="f"><label>Tổng chiều dày H</label><div class="ro"><span>cm</span><b id="Hdisp">—</b></div></div>
+      </div>
+      <div class="tw"><table class="tbl" id="layTbl">
+        <thead><tr><th>#</th><th>Vật liệu</th><th>h (cm)</th><th>E<sub>dv</sub></th><th>E<sub>tr</sub></th><th>E<sub>ku</sub></th><th>R<sub>ku</sub></th><th>k₂</th><th>c (MPa)</th><th>φ (°)</th><th>Tính</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <div class="row" style="margin-top:8px"><button class="btn sm" id="addLay">＋ Thêm lớp</button><span class="small">Đơn vị mô đun và cường độ: MPa. c, φ chỉ cần cho lớp vật liệu kém dính cần kiểm tra trượt (ví dụ cấp phối thiên nhiên).</span></div>
+      <div id="layWarn"></div>
+    </div>
+
+    <div class="card">
+      <h2>Tự động tìm chiều dày cần thiết</h2>
+      <p class="sub">Chọn một lớp để app thử dần chiều dày (bước 1 cm) cho đến khi kết cấu thỏa các điều kiện đã chọn.</p>
+      <div class="fields">
+        <div class="f" style="grid-column:span 2"><label>Lớp điều chỉnh</label><select class="c" id="optLayer"></select></div>
+        <div class="f"><label>Điều kiện cần thỏa</label><select class="c" id="optTarget"><option value="all">Tất cả điều kiện</option><option value="dv">Chỉ độ võng đàn hồi</option></select></div>
+        <div class="f"><label>Giới hạn h (cm)</label><div class="row"><input class="c" id="optMin" type="number" value="5" style="width:70px"><span>–</span><input class="c" id="optMax" type="number" value="80" style="width:70px"></div></div>
+      </div>
+      <div class="row" style="margin-top:10px"><button class="btn pri" id="optRun">Tìm chiều dày</button><span id="optOut" class="small"></span></div>
+    </div>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="page" id="p3">
+    <div class="kpis" id="resKpis"></div>
+    <div class="checks" id="resChecks"></div>
+    <div class="grid2">
+      <div class="card" style="grid-column:1/-1"><h2>Sơ đồ kết cấu áo đường</h2><p class="sub">Chiều dày và đặc trưng tính toán của từng lớp</p><div id="stack"></div></div>
+      <div class="card"><h2>Lưu ý</h2><div id="resNotes" class="small"></div></div>
+    </div>
+  </section>
+
+  <!-- PAGE 4 -->
+  <section class="page" id="p4">
+    <div class="row noprint" style="margin-bottom:10px"><label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="printNomo" checked> In kèm hình tra toán đồ</label><button class="btn sm" id="printBtn2">In thuyết minh / PDF</button></div>
+    <table class="ptbl"><tbody><tr><td><div class="card" id="report"></div></td></tr></tbody><tfoot><tr><td><div class="pfoot-sp"></div></td></tr></tfoot></table>
+    <div class="pfoot">Phát triển bởi TS. Đặng Minh Tân – Bộ môn Đường bộ - Sân bay | Khoa Công trình và Môi trường | Trường Đại học Giao thông Vận tải<br>Chương trình phục vụ giảng dạy và học tập cho sinh viên ngành Công trình, Trường Đại học Giao thông Vận tải</div>
+  </section>
+
+  <!-- PAGE 5 -->
+  <section class="page" id="p5">
+    <div class="card">
+      <h2>App tự xác định các trị số toán đồ như thế nào</h2>
+      <p class="sub">Các toán đồ của TCCS 38 được lập từ lời giải hệ bán không gian đàn hồi nhiều lớp, tiếp xúc liên tục, tải trọng tròn phân bố đều (điều 9.1.3, 9.3.2). App giải trực tiếp bài toán đó bằng biến đổi Hankel (tích phân số), không cần dóng toán đồ.</p>
+      <div class="tw"><table class="tbl" style="min-width:640px">
+        <thead><tr><th>Đại lượng</th><th>Toán đồ</th><th>Cách app tính</th><th>Đối chiếu</th></tr></thead>
+        <tbody>
+          <tr><td>E<sub>ch</sub>/E₁</td><td>Hình 2 (H/D ≤ 2)</td><td>Hệ 2 lớp, μ₁ = 0,25, μ₂ = 0,35; E<sub>ch</sub> suy từ độ võng tâm vệt bánh; hiệu chỉnh nhỏ (≤ +2,8 %) theo số hóa Hình 2</td><td>Lệch so với Hình 2 số hóa ≤ ±2 %; ví dụ PL D: 0,500 so với 0,51</td></tr>
+          <tr><td>E<sub>ch</sub>/E₁</td><td>H/D &gt; 2</td><td>Công thức (E.1) Phụ lục E, đúng như điều 9.2.3 cho phép</td><td>—</td></tr>
+          <tr><td>T<sub>ax</sub>/p</td><td>Hình 4, Hình 5</td><td>Hệ 2 lớp μ₁ = 0,25, μ₂ = 0,35 (điều 9.3.2). Ứng suất cắt hoạt động T = (σ₁−σ₃)/(2cosφ) − (σ₁+σ₃)/2·tgφ trên trục tải trọng, lấy lớn nhất theo chiều sâu trong lớp dưới</td><td>Tại H/D = 0 khớp toán đồ ±2 % (φ = 10–40°). Kết cấu dày: lớn hơn trị số đọc trong PL D khoảng 10–20 % (thiên an toàn)</td></tr>
+          <tr><td>T<sub>av</sub></td><td>Hình 6</td><td>Hình 6 là các đường thẳng qua gốc: T<sub>av</sub> = k(φ)·H, nội suy k theo φ</td><td>PL D: −0,00195 / −0,00155 so với −0,0019 / −0,0015</td></tr>
+          <tr><td>σ̄<sub>ku</sub> tầng mặt</td><td>Hình 7</td><td>Công thức (E.2)–(E.3) Phụ lục E</td><td>PL D: 1,588 / 1,897 so với 1,59 / 1,95</td></tr>
+          <tr><td>σ̄<sub>ku</sub> tầng móng</td><td>Hình 8</td><td>Hệ 3 lớp đàn hồi (lớp trên quy đổi, lớp liền khối, E<sub>ch.m</sub>), μ = 0,35, ứng suất kéo đáy lớp liền khối</td><td>PL D: 0,348 so với 0,352</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note">Ở trang “Thuyết minh chi tiết”, mỗi trị số toán đồ có ô <b>“Tra toán đồ”</b>: nếu nhập trị số tự đọc trên toán đồ, app dùng trị số đó thay cho trị số tự tính (ghi rõ trong thuyết minh). Để trống thì app dùng trị số tự tính. Chức năng tìm chiều dày luôn dùng trị số tự tính.</div>
+    </div>
+    <div class="card">
+      <h2>Tra toán đồ theo kết cấu đang tính</h2>
+      <p class="sub">Đường đỏ nét đứt thể hiện trình tự dóng 1 → 2 → 3 (→ 4) cho từng trị số tra; tự cập nhật khi thay đổi số liệu.</p>
+      <div class="imgs" id="nomoLive"></div>
+    </div>
+    <div class="card">
+      <details><summary style="cursor:pointer;font-weight:700">Toán đồ gốc (không có đường tra)</summary>
+      <div class="imgs" style="margin-top:10px">
+        <figure><img id="nimg0" alt="Hình 2" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><figcaption>Hình 2 · E<sub>ch</sub> hệ 2 lớp</figcaption></figure>
+        <figure><img id="nimg1" alt="Hình 4" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><figcaption>Hình 4 · T<sub>ax</sub>/p (H/D = 0–2)</figcaption></figure>
+        <figure><img id="nimg2" alt="Hình 5" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><figcaption>Hình 5 · T<sub>ax</sub>/p (H/D = 0–4)</figcaption></figure>
+        <figure><img id="nimg3" alt="Hình 6" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><figcaption>Hình 6 · T<sub>av</sub></figcaption></figure>
+        <figure><img id="nimg4" alt="Hình 7" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><figcaption>Hình 7 · σ̄<sub>ku</sub> tầng mặt</figcaption></figure>
+        <figure><img id="nimg5" alt="Hình 8" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="><figcaption>Hình 8 · σ̄<sub>ku</sub> tầng móng</figcaption></figure>
+      </div></details>
+    </div>
+    <p class="small">Công cụ hỗ trợ học tập và tính toán sơ bộ theo TCCS 38:2022/TCĐBVN. Đặc trưng vật liệu, nền đất và kết quả cần được người thiết kế kiểm tra theo hồ sơ dự án. Biên soạn: TS. Đặng Minh Tân – Bộ môn Đường bộ – Sân bay, Trường ĐH Giao thông Vận tải.</p>
+  </section>
+</main>
+<footer class="sitefoot"><b>Phát triển bởi TS. Đặng Minh Tân – Bộ môn Đường bộ - Sân bay | Khoa Công trình và Môi trường | Trường Đại học Giao thông Vận tải</b><br>Chương trình phục vụ giảng dạy và học tập cho sinh viên ngành Công trình, Trường Đại học Giao thông Vận tải<div class="disc" style="max-width:980px;margin:10px auto 0;text-align:left">Chương trình được xây dựng phục vụ giảng dạy, học tập và tham khảo. Kết quả phụ thuộc hoàn toàn vào số liệu đầu vào do người sử dụng cung cấp và các giả thiết tính toán đã nêu (trị số toán đồ được xác định bằng lời giải hệ đàn hồi nhiều lớp và các công thức gần đúng ở Phụ lục E của tiêu chuẩn). Chương trình không thay thế hồ sơ thiết kế, khảo sát, thí nghiệm vật liệu và trách nhiệm thẩm tra, phê duyệt theo quy định. Tác giả và Bộ môn không chịu trách nhiệm đối với bất kỳ thiệt hại hay hệ quả nào phát sinh khi sử dụng kết quả của chương trình cho mục đích thiết kế, thi công hoặc thương mại. Người sử dụng có trách nhiệm kiểm tra, đối chiếu với TCCS 38:2022/TCĐBVN và các quy định hiện hành trước khi sử dụng.</div></footer>
+
+<script src="core.enc.js"></script>
+<script>
+(function(){
+"use strict";
+var ITER=250000;
+var LG={vi:{lgTitle:"Tính toán kết cấu áo đường mềm",lgSub:"Theo TCCS 38:2022/TCĐBVN · Bộ môn Đường bộ - Sân bay, Trường ĐH Giao thông Vận tải",lgUL:"Tài khoản",lgPL:"Mật khẩu",lgBtn:"Đăng nhập",lgLang:"English",lgDisc:"Chương trình được xây dựng phục vụ giảng dạy, học tập và tham khảo. Kết quả phụ thuộc hoàn toàn vào số liệu đầu vào do người sử dụng cung cấp và các giả thiết tính toán đã nêu (trị số toán đồ được xác định bằng lời giải hệ đàn hồi nhiều lớp và các công thức gần đúng ở Phụ lục E của tiêu chuẩn). Chương trình không thay thế hồ sơ thiết kế, khảo sát, thí nghiệm vật liệu và trách nhiệm thẩm tra, phê duyệt theo quy định. Tác giả và Bộ môn không chịu trách nhiệm đối với bất kỳ thiệt hại hay hệ quả nào phát sinh khi sử dụng kết quả của chương trình cho mục đích thiết kế, thi công hoặc thương mại. Người sử dụng có trách nhiệm kiểm tra, đối chiếu với TCCS 38:2022/TCĐBVN và các quy định hiện hành trước khi sử dụng.",err:"Tài khoản hoặc mật khẩu không đúng.",chk:"Đang kiểm tra…",nocore:"Không tìm thấy file core.enc.js (đặt cùng thư mục với trang này).",nocrypto:"Trình duyệt không hỗ trợ giải mã. Hãy mở qua https (GitHub Pages) hoặc trình duyệt Chrome/Edge mới."},
+ en:{lgTitle:"Flexible pavement design",lgSub:"According to TCCS 38:2022/TCĐBVN · Dept. of Highway & Airfield Engineering, University of Transport and Communications",lgUL:"Username",lgPL:"Password",lgBtn:"Sign in",lgLang:"Tiếng Việt",lgDisc:"This program is developed for teaching, learning and reference purposes. Results depend entirely on the input data supplied by the user and on the stated calculation assumptions (nomograph values are obtained from the multilayer elastic solution and the approximate formulas of Annex E of the standard). The program does not replace design documents, site investigation, material testing or the statutory responsibility for review and approval. The author and the Department accept no liability for any loss or consequence arising from the use of its results for design, construction or commercial purposes. Users are responsible for checking the results against TCCS 38:2022/TCĐBVN and current regulations before use.",err:"Incorrect username or password.",chk:"Checking…",nocore:"core.enc.js not found (place it in the same folder as this page).",nocrypto:"This browser cannot decrypt. Open via https (GitHub Pages) or a recent Chrome/Edge."}};
+function lang(){var l="vi";try{l=localStorage.getItem("kcad_lang")||"vi"}catch(e){}return LG[l]?l:"vi"}
+function tx(k){return LG[lang()][k]}
+function applyLoginLang(){["lgTitle","lgSub","lgUL","lgPL","lgBtn","lgLang","lgDisc"].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=tx(id)});document.documentElement.lang=lang()}
+
+function b64(u8){var s="";for(var i=0;i<u8.length;i+=8192)s+=String.fromCharCode.apply(null,u8.subarray(i,i+8192));return btoa(s)}
+function ub64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+function err(m){var e=document.getElementById("lgErr");if(e)e.textContent=m}
+function start(payload){
+  var P=JSON.parse(payload);
+  (P.imgs||[]).forEach(function(src,i){var el=document.getElementById("nimg"+i);if(el)el.src=src});
+  document.body.classList.remove("locked");
+  (new Function(P.code))();
+}
+function decryptWith(key){
+  var C=window.KCAD_CORE;
+  return crypto.subtle.decrypt({name:"AES-GCM",iv:ub64(C.iv)},key,ub64(C.data)).then(function(buf){return new TextDecoder().decode(buf)});
+}
+function derive(pass){
+  var C=window.KCAD_CORE;
+  return crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveKey"]).then(function(base){
+    return crypto.subtle.deriveKey({name:"PBKDF2",salt:ub64(C.salt),iterations:C.iter||ITER,hash:"SHA-256"},base,{name:"AES-GCM",length:256},true,["decrypt"]);
+  });
+}
+function init(){
+  applyLoginLang();var lb=document.getElementById("lgLang");if(lb)lb.addEventListener("click",function(){try{localStorage.setItem("kcad_lang",lang()==="en"?"vi":"en")}catch(e){}applyLoginLang()});
+  if(!window.KCAD_CORE){err(tx("nocore"));return}
+  if(!(window.crypto&&crypto.subtle)){err(tx("nocrypto"));return}
+  var saved=null;try{saved=sessionStorage.getItem("kcad_k")}catch(e){}
+  if(saved){
+    crypto.subtle.importKey("raw",ub64(saved),{name:"AES-GCM"},false,["decrypt"]).then(decryptWith).then(start).catch(function(){try{sessionStorage.removeItem("kcad_k")}catch(e){}});
+  }
+  var f=document.getElementById("loginForm");
+  setTimeout(function(){try{document.getElementById("lgUser").focus()}catch(e){}},50);
+  f.addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var u=document.getElementById("lgUser").value.trim().toLowerCase(),p=document.getElementById("lgPass").value,btn=f.querySelector("button");
+    btn.disabled=true;btn.textContent=tx("chk");err("");
+    var key;
+    derive(u+"|"+p).then(function(k){key=k;return decryptWith(k)}).then(function(txt){
+      crypto.subtle.exportKey("raw",key).then(function(raw){try{sessionStorage.setItem("kcad_k",b64(new Uint8Array(raw)))}catch(e){}});
+      start(txt);
+    }).catch(function(e){
+      err(tx("err"));document.getElementById("lgPass").value="";document.getElementById("lgPass").focus();
+    }).then(function(){btn.disabled=false;btn.textContent=tx("lgBtn")});
+  });
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+})();
+
+</script>
+</body>
+</html>
